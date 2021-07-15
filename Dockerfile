@@ -40,7 +40,6 @@ RUN apt-get update -qq && \
     rm -rf /root/.cache && \
     rm -rf /var/lib/apt/lists/*
 # conda init
-COPY requirements.txt .
 RUN \
     wget https://bootstrap.pypa.io/get-pip.py --progress=bar:force:noscroll --no-check-certificate && \
     python${PYTHON_VERSION} get-pip.py && \
