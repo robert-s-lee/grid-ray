@@ -1,5 +1,8 @@
+A example of [Ray](https://docs.ray.io/en/master/) running inside [Grid.ai][https://grid.ai]
 
 ## Setup
+
+Setup local environment
 ```
 conda create --name ray python=3.7
 conda activate ray
@@ -14,24 +17,22 @@ pip install tensorboardX
 pip freeze > requirements.txt
 ```
 
-## test Dockerfile works locally
+## Run on local environment
+
 ```
-docker build .
-docker images
-docker tag b575d540ff67 robert/gridray:version1.0
-docker images
-REPOSITORY                            TAG          IMAGE ID       CREATED          SIZE
-robert/gridray                        version1.0   b575d540ff67   20 minutes ago   4.35GB
+python ray-tune-quickstart.py
 ```
 
-## Run on Grid
+## Run on Grid unmodified
 
-Let Grid.ai setup the container 
+There are couple of ways to setup the execution environment.  The easiest way is to let Grid.ai use requirements.txt to setup the environment.
+
 ```
 grid run ray-tune-quickstart.py
 ```
 
-Manually create the container 
+Another approach is to specify the Dockerfile that has everything using [--dockerfile simple1.dockerfile](simple1.dockerfile).  Grid.ai will build using this specification.
+
 ```
-grid run --dockerfile Dockerfile --localdir ray-tune-quickstart.py
+grid run --dockerfile simple1.dockerfile --localdir ray-tune-quickstart.py
 ```
