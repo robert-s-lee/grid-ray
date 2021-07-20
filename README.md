@@ -1,4 +1,4 @@
-A example of [Ray](https://docs.ray.io/en/master/) running inside [Grid.ai][https://grid.ai].  The examples will show how to:
+A example of [Ray](https://docs.ray.io/en/master/) running inside [Grid.ai](https://grid.ai).  The examples will show how to:
 
 - [Get started with Development Setup](#get-started-with-development-setup)
 - [Unit test by running experiment locally](#unit-test-by-running-experiment-locally)
