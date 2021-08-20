@@ -7,4 +7,4 @@ FROM python:3.8
 WORKDIR /gridai/project
 COPY . .
 # mandatory for Grid.  
-RUN pip install --ignore-requires-python -v -r requirements.txt
+# RUN pip install --ignore-requires-python -v -r requirements.txt
